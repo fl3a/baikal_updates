@@ -10,6 +10,12 @@ Excecute the script itself with  */path/to/baikal* as argument
 baikal_updates.sh /path/to/baikal
 ```
 
+For continuous checks via cron, e.g.:
+```
+MAILTO=mail@example.com
+24 23 * * * baikal_updates.sh /path/to/baikal
+```
+
 ## Requirements
 
 - [curl](https://curl.se/)
