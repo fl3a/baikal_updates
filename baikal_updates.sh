@@ -1,11 +1,10 @@
-#!/bin/bash
-
-# https://github.com/fl3a/baikal_updates
+#!/usr/bin/env bash
 
 # Check for available updates of the Baïkal CalDAV and CardDAV server
-# by comparing configured_version from your config/baikal.yaml 
-# with the version of the latest release from Github.
-
+# by comparing current version with the version of the latest release from Github.
+#
+# https://github.com/fl3a/baikal_updates
+#
 # Usage: baikal_updates.sh /path/to/baikal
 
 set -e
