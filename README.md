@@ -10,7 +10,7 @@ If *configured_version* and latest version differ,
 it prints out a message with *configured_version*, latest release *version* 
 and field *body*, which is used for release notes and changes.
 
-E.g. output, *configured_version* is *0.9.1* while *0.9.2* is available:
+E.g. output, *configured_version* is *0.9.3* while *0.9.4* is available:
 ```
 Baïkal update available:
  - Running 0.9.3 -> 0.9.4 is available
