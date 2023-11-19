@@ -13,9 +13,12 @@ and field *body*, which is used for release notes and changes.
 E.g. output, *configured_version* is *0.9.1* while *0.9.2* is available:
 ```
 Baïkal update available:
- - Running 0.9.1 -> 0.9.2 is available
+ - Running 0.9.3 -> 0.9.4 is available
 Release notes:
- - Fix php warning in admin interface
+- Fix difference in database scheme between MySQL and SQLite
+- Make base_uri case sensitive
+- Upgrade sabre/dav to 4.5.0 (this should fix some warnings on php 8.2)
+Release url: https://github.com/sabre-io/Baikal/releases/tag/0.9.4 
  ```
 
 ## Usage
