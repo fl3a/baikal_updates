@@ -13,11 +13,14 @@ set -o nounset
 baikal=$1 && test -d $baikal || { echo "$baikal is no directory."; exit; }
 version=$(grep 'configured_version' ${baikal}/config/baikal.yaml | tr -d ' ' | cut -d ':'  -f 2)
 current_version=${version:?}
-latest_version=$(curl -s https://api.github.com/repos/sabre-io/Baikal/releases/latest | jq -r '.name')
+latest_json=$(curl -s https://api.github.com/repos/sabre-io/Baikal/releases/latest)
+latest_version=$(echo $latest_json | jq -r '.name')
 
 if [ "$current_version" != "$latest_version" ] ; then 
-   latest_body=$(curl -s https://api.github.com/repos/sabre-io/Baikal/releases/latest | jq -r '.body')
+   latest_body=$(echo $latest_json | jq -r '.body')
+   release_url=$(echo $latest_json | jq -r '.html_url')
    echo -e "Baïkal update available:" 
    echo " - Running $current_version -> $latest_version is available"
-   echo -e "Release notes:\n $latest_body"
+   echo -e "Release notes:\n$latest_body"
+   echo "Release url: $release_url "
 fi
